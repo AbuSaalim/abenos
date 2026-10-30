@@ -20,95 +20,82 @@ export default function HeroSection() {
                   className="text-anime-style-3"
                   data-cursor="-opaque"
                   style={{
-                    fontSize: "clamp(20px, 2.5vw, 32px)",
-                    lineHeight: 1.3,
+                    fontSize: "clamp(22px, 2.8vw, 36px)",
+                    lineHeight: 1.28,
                   }}
                 >
                   International service standards with Local expertise. Quality,
                   Safety and People at the center of every operation.
                 </h1>
-                <ul
-                  style={{
-                    listStyle: "none",
-                    padding: "12px 0 0",
-                    margin: 0,
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "9px",
-                  }}
-                >
+
+                {/* Responsive 5 Business Segments Chips / Grid */}
+                <div className="hero-segments-grid">
                   {[
-                    { title: "Offshore & Marine", sub: "Energy O&M Segment" },
+                    { title: "Offshore & Marine", tag: "Energy O&M" },
                     {
                       title: "Remote Site & Camp Management",
-                      sub: "RESCOM Segment",
+                      tag: "RESCOM",
                     },
-                    { title: "Integrated FM Services", sub: "IFM Segment" },
+                    { title: "Integrated FM Services", tag: "IFM" },
                     {
                       title: "Victualing Support Services",
-                      sub: "VSS Segment",
+                      tag: "VSS",
                     },
                     {
                       title: "Corporate & Industrial Services",
-                      sub: "CIS Segment",
+                      tag: "CIS",
                     },
                   ].map((seg, i) => (
-                    <li
-                      key={i}
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "10px",
-                        padding: "7px 14px",
-                        borderRadius: "8px",
-                        background: "rgba(255,255,255,0.04)",
-                        border: "1px solid rgba(255,255,255,0.07)",
-                        borderLeft: "3px solid #FBAF41",
-                      }}
-                    >
-                      <span
-                        style={{
-                          fontSize: "14px",
-                          fontWeight: 700,
-                          color: "#FFFFFF",
-                        }}
-                      >
-                        {seg.title}
-                      </span>
-                      <span
-                        style={{
-                          fontSize: "12px",
-                          color: "#94A3B8",
-                          fontWeight: 500,
-                        }}
-                      >
-                        ({seg.sub})
-                      </span>
-                    </li>
+                    <div key={i} className="hero-segment-chip">
+                      <span className="hero-chip-glow-dot" />
+                      <span className="hero-chip-title">{seg.title}</span>
+                      <span className="hero-chip-badge">{seg.tag}</span>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
               {/* Section Title End */}
 
-              {/* Hero Content Body Start */}
+              {/* Hero Action Buttons (Primary & Secondary) */}
               <div
-                className="hero-content-body hero-btns-row wow fadeInUp"
+                className="hero-actions-group wow fadeInUp"
                 data-wow-delay="0.4s"
               >
-                {/* Hero Button Start */}
-                <div className="hero-btn">
-                  <Link href="#contact" className="btn-default btn-highlighted">
-                    Request a Proposal
-                  </Link>
-                </div>
-                <div className="hero-btn">
-                  <Link href="#sectors-showcase" className="btn-default btn-highlighted">
-                    Explore Our Services
-                  </Link>
-                </div>
-                {/* Hero Button End */}
+                <Link href="#contact" className="hero-btn-primary">
+                  <span>Request a Proposal</span>
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
+                </Link>
+
+                <Link href="#sectors-showcase" className="hero-btn-secondary">
+                  <span>Explore Our Services</span>
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
+                </Link>
               </div>
-              {/* Hero Content Body End */}
+              {/* Hero Action Buttons End */}
 
               {/* Hero Counter Item List Start */}
               <div className="hero-counter-list wow fadeInUp">
